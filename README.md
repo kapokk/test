@@ -358,6 +358,13 @@ TCP拥塞控制
 如果有ACK超时，说明网络严重拥塞，马上采用拥塞解决方法，cwnd改为1，拥塞阈值/2（乘法减小），然后继续慢增长
 如果有连续4个相同ack收到，执行快恢复算法，cwnd 和 拥塞阈值同时改为 (cwnd/2), 然后继续使用拥塞避免模式
 
+WWW 万维网
+包括 URL HTTP HTML
+URL = 协议+主机+端口+路径
+HTTP协议分为非持续连接 和持续链接 非持续连接每次传送一个资源重新建立连接 持续连接分为流水线 非流水线连接 流水线同时发送多次资源请求 非流水线单次发送，但是不关闭连接 在html文件体现为connection字段为close 和 keep alive
+http 1.0 默认非持续连接
+http 1.1 默认持续连接
+
 ## 计网错题
 <img width="821" height="177" alt="image" src="https://github.com/user-attachments/assets/c9bcf2bb-58a6-4458-b6a0-0e71d494d07a" />
 理解RTT发送多少次数据出错
