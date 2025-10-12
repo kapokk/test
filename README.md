@@ -883,13 +883,41 @@ http 1.1 默认持续连接
                            使用call进入函数(IP(PC)压入函数栈，然后PC跳转，然后push ebp，mov ebp esp
                            退出函数使用leave指令，等价于mov esp ebp,pop ebp
                            <img width="1190" height="316" alt="image" src="https://github.com/user-attachments/assets/62038c39-a54a-4af2-84d6-a8ec35dec909" />
+                  堆栈内如何传参？
+                           调用者把参数放进将要入栈的程序栈帧里的局部变量位
          CISC&RISC
                   <img width="1891" height="969" alt="image" src="https://github.com/user-attachments/assets/e076dd37-7515-4fef-a623-c83bc9428c6e" />
                   乘法指令可以访存一定是CISC
 
          <img width="1906" height="975" alt="image" src="https://github.com/user-attachments/assets/a9d829c8-f502-4ff0-b938-d438ebf18820" />
 
-
+### cpu
+cpu基本功能是
+         1.指令控制
+                  取指令 分析指令 执行指令
+         2.操作控制
+                  产生操作信号操纵各个部件
+         3.时间控制
+                  控制操作信号的时间和顺序
+         4.数据加工
+                  算数逻辑运算
+         5.中断处理
+cpu的基本组成  
+         运算器->数据加工
+                  基本结构：
+                           算数逻辑单元ALU，通用寄存器，暂存寄存器，ACC,PSW构成
+                           寄存器统一与数据总线连通，传递信号给ALU的两个输入，其中一个输入有暂存寄存器，ALU输出也有暂存寄存器，总线需要仲裁各个寄存器信号
+         控制器->取指 分析 执行 中断处理
+                  基本结构
+                           程序计数器PC
+                           指令寄存器IR(注意和IP区分）
+                           指令译码器ID
+                           微操作信号发生器（连接PSW)
+                           时序系统
+                           MAR 存放需要访问的主存地址
+                           MDR 存放要写入内存的数据
+         寄存器
+         中断系统
 
                                     
 
