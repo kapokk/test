@@ -837,6 +837,19 @@ http 1.1 默认持续连接
                                     基址寻址-操作系统维护一个进程基址寄存器BR,根据BR+x寻址
                                     变址寻址-用户可访问IX寄存器，根据IX寻址
                                     堆栈寻址-堆栈寄存器SP指向堆栈顶部，
+         汇编
+                  汇编常用寄存器：
+                           E extend 表示32位
+                           EAX(extend A register) 通用寄存器A
+                           EBX 通用B
+                           ESP 堆栈顶指针寄存器
+                           EBP 堆基指针寄存器
+                           ESI (extend source index) 变址源寄存器
+                           EDI 变址目标寄存器
+                  汇编常用指令
+                           mov destination source 注意不是source des 是 des sour
+                           #x 立即数
+                           dword ptr[] byte ptr[] word ptr[] , 双字，字节，单字指针，获取对应字数的值 
                                     
 
          
