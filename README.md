@@ -840,16 +840,36 @@ http 1.1 默认持续连接
          汇编
                   汇编常用寄存器：
                            E extend 表示32位
-                           EAX(extend A register) 通用寄存器A
+                           EAX(extend A index) 通用寄存器A
                            EBX 通用B
                            ESP 堆栈顶指针寄存器
                            EBP 堆基指针寄存器
                            ESI (extend source index) 变址源寄存器
                            EDI 变址目标寄存器
-                  汇编常用指令
+                  汇编常用指令x86（x86汇编所有命令都是先dex 再source）
                            mov destination source 注意不是source des 是 des sour
                            #x 立即数
                            dword ptr[] byte ptr[] word ptr[] , 双字，字节，单字指针，获取对应字数的值 
+                           mul
+                           imul
+                           div
+                           mdiv
+                           shl
+                           shr
+                           inc
+                           dec
+                           test
+                           jxxx，je,jne,jl,jg,jle,jge
+                           call
+                           ret
+                  汇编指令AT&T
+                           指令后是先source 再destination
+                           寄存器前加%
+                           立即数前加$
+                           主存用()括号括起来
+                           读写内存不用word ptr表示 用moveb(a1234h),或者movel 或者movew来表示 b-byte l-2word w-word
+                           如果主存偏移可表示为基址寄存+变址寄存*比例+偏移 则汇编表示为 offset(%ebx,%ecx,rate)
+                           
                                     
 
          
