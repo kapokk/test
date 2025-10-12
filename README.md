@@ -811,65 +811,86 @@ http 1.1 默认持续连接
                                     组合：写分配法一般组合写回法；；；全写法组合非写分配法
                                     多级cache，cache之间一般用全写法+非写分配法；；cache和内存间用写回法+写分配法       
 ### 指令系统
-         指令格式：  
-                  指令由操作码和地址码构成，由定长指令和非定长指令（略）；；；操作码又分为定长操作码和非定长操作码
-                           非定长操作码拿地址码的位置当操作码，且短操作码不能是长操作码的前缀
-                           假如操作码由前4位构成，则要拓展操作码，至少留最后一个标识数1111作为拓展操作码的标识，然后后面继续4个位表示二级操作码
-         寻址：
-                  指令寻址：
-                           指令寻址是指寻找下一跳指令的地址
-                           指令寻址有三种方法：
-                                    顺序寻址
-                                             PC+1
-                                    跳跃寻址
-                                             JMP
-                                    
-                  数据寻址：
-                           是指寻找形式地址对应的有效地址
-                           数据寻址方法有多种，通过在地址码之前添加nb的标识符表示：
-                                    直接寻址-地址码指向实际存储地址；；汇编上通过地址前加#来表示这是个立即数
-                                    立即寻址-地址码存的是操作数
-                                    间接寻址（多级）-地址码指向的是指向目标地址的地址指针
-                                    隐含寻址-有操作数蕴含在相关操作的寄存器上
-                                    寄存器寻址-地址码指向寄存器位置
-                                    寄存器间接寻址-寄存器指针
-                                    相对寻址-相对PC+x
-                                    基址寻址-操作系统维护一个进程基址寄存器BR,根据BR+x寻址
-                                    变址寻址-用户可访问IX寄存器，根据IX寻址
-                                    堆栈寻址-堆栈寄存器SP指向堆栈顶部，
-         汇编
-                  汇编常用寄存器：
-                           E extend 表示32位
-                           EAX(extend A index) 通用寄存器A
-                           EBX 通用B
-                           ESP 堆栈顶指针寄存器
-                           EBP 堆基指针寄存器
-                           ESI (extend source index) 变址源寄存器
-                           EDI 变址目标寄存器
-                  汇编常用指令x86（x86汇编所有命令都是先dex 再source）
-                           mov destination source 注意不是source des 是 des sour
-                           #x 立即数
-                           dword ptr[] byte ptr[] word ptr[] , 双字，字节，单字指针，获取对应字数的值 
-                           mul
-                           imul
-                           div
-                           mdiv
-                           shl
-                           shr
-                           inc
-                           dec
-                           test
-                           jxxx，je,jne,jl,jg,jle,jge
-                           call
-                           ret
-                  汇编指令AT&T
-                           指令后是先source 再destination
-                           寄存器前加%
-                           立即数前加$
-                           主存用()括号括起来
-                           读写内存不用word ptr表示 用moveb(a1234h),或者movel 或者movew来表示 b-byte l-2word w-word
-                           如果主存偏移可表示为基址寄存+变址寄存*比例+偏移 则汇编表示为 offset(%ebx,%ecx,rate)
-                           
+指令格式：  
+         指令由操作码和地址码构成，由定长指令和非定长指令（略）；；；操作码又分为定长操作码和非定长操作码
+                  非定长操作码拿地址码的位置当操作码，且短操作码不能是长操作码的前缀
+                  假如操作码由前4位构成，则要拓展操作码，至少留最后一个标识数1111作为拓展操作码的标识，然后后面继续4个位表示二级操作码
+寻址：
+         指令寻址：
+                  指令寻址是指寻找下一跳指令的地址
+                  指令寻址有三种方法：
+                           顺序寻址
+                                    PC+1
+                           跳跃寻址
+                                    JMP  
+         数据寻址：
+                  是指寻找形式地址对应的有效地址
+                  数据寻址方法有多种，通过在地址码之前添加nb的标识符表示：
+                           直接寻址-地址码指向实际存储地址；；汇编上通过地址前加#来表示这是个立即数
+                           立即寻址-地址码存的是操作数
+                           间接寻址（多级）-地址码指向的是指向目标地址的地址指针
+                           隐含寻址-有操作数蕴含在相关操作的寄存器上
+                           寄存器寻址-地址码指向寄存器位置
+                           寄存器间接寻址-寄存器指针
+                           相对寻址-相对PC+x
+                           基址寻址-操作系统维护一个进程基址寄存器BR,根据BR+x寻址
+                           变址寻址-用户可访问IX寄存器，根据IX寻址
+                           堆栈寻址-堆栈寄存器SP指向堆栈顶部，
+汇编
+         汇编常用寄存器：
+                  E extend 表示32位
+                  EAX(extend A index) 通用寄存器A
+                  EBX 通用B
+                  ESP 堆栈顶指针寄存器
+                  EBP 堆基指针寄存器
+                  ESI (extend source index) 变址源寄存器
+                  EDI 变址目标寄存器
+         汇编常用指令x86（x86汇编所有命令都是先dex 再source）
+                  内存位非十六进制数数表示，通常是某些别名
+                  mov destination source 注意不是source des 是 des sour
+                  x86架构中，PC寄存器又称为IP寄存器
+                  #x 立即数
+                  dword ptr[] byte ptr[] word ptr[] , 双字，字节，单字指针，获取对应字数的值 
+                  mul
+                  imul
+                  div
+                  mdiv
+                  shl
+                  shr
+                  inc
+                  dec
+                  test
+                  jxxx，je,jne,jl,jg,jle,jge 配合cmp使用
+                  call 把当前IP值压入程序栈帧内（函数栈帧用于保存函数调用信息和局部变量），然后设置新的ip值调用函数
+                  ret  拿回旧的ip值并设置
+         汇编指令AT&T
+                  指令后是先source 再destination
+                  寄存器前加%
+                  立即数前加$
+                  主存用()括号括起来
+                  读写内存不用word ptr表示 用moveb(a1234h),或者movel 或者movew来表示 b-byte l-2word w-word
+                  如果主存偏移可表示为基址寄存+变址寄存*比例+偏移 则汇编表示为 offset(%ebx,%ecx,rate)
+         汇编实现循环
+                  1.条件判断循环
+                           设定各个条件下的jmp
+                  2.loop 循环
+                           loop指令用于返回指定地址
+         汇编访问栈帧
+                  cpu地址以字节编址，x86系统中，栈帧以4字节为一帧
+                  cpu维护ESP,EBP表示栈顶和栈底，然后然后用push,pop或者mov操作
+                           push 和 pop call都是对esp进行操作，结果或者源放到目标地址
+                  栈帧切换
+                           使用call进入函数(IP(PC)压入函数栈，然后PC跳转，然后push ebp，mov ebp esp
+                           退出函数使用leave指令，等价于mov esp ebp,pop ebp
+                           <img width="1190" height="316" alt="image" src="https://github.com/user-attachments/assets/62038c39-a54a-4af2-84d6-a8ec35dec909" />
+         CISC&RISC
+                  <img width="1891" height="969" alt="image" src="https://github.com/user-attachments/assets/e076dd37-7515-4fef-a623-c83bc9428c6e" />
+                  乘法指令可以访存一定是CISC
+
+         <img width="1906" height="975" alt="image" src="https://github.com/user-attachments/assets/a9d829c8-f502-4ff0-b938-d438ebf18820" />
+
+
+
                                     
 
          
