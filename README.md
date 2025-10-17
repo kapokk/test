@@ -711,7 +711,7 @@ SSID 服务集的id SS_id
 漫游 主机从一个AP到另一个ap
 采用802.11帧 有数据帧 控制帧(RTS,CTS,ACK) 管理帧（探测）
 帧结构 控制，持续时间，AP MAC，source mac ， des mac 。。。后面省略
-
+地址结构是直接des ， 直接 source，间接des，间接source，直接是指谁发的 谁手的
 
 交换机原理
 维护MAC路由表 设定超时丢弃 自动记录MAC对应端口号
@@ -895,6 +895,10 @@ http 1.1 默认持续连接
 <img width="803" height="130" alt="image" src="https://github.com/user-attachments/assets/1760e2d2-a85b-4d66-88dc-aec3dbd8516c" />
 
 <img width="736" height="54" alt="image" src="https://github.com/user-attachments/assets/f55e529d-b2f0-4610-a13f-36ffaa9cf5ab" />
+
+vlan同一交换机下的节点通信不用801.1q帧
+
+不同vlan的主机即使在同意局域网下，也不同相互通信
 
 
 
