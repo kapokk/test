@@ -500,6 +500,8 @@ IO设备
 
 操作系统和中断是两个独立的个体，共同操作cpu，中断时PSW的存储和内核态都是终端完成的，不是操作系统完成的
 
+<img width="908" height="256" alt="image" src="https://github.com/user-attachments/assets/323b5975-0104-435a-a3f7-511ed8d3d3d8" />
+
          
 # 计算机网络
 
