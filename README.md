@@ -1214,3 +1214,5 @@ cpu执行数据流程
 
 <img width="522" height="58" alt="image" src="https://github.com/user-attachments/assets/0328a414-9499-4ba7-8fd4-8b9af6845150" />
 
+ROM也有可擦写的，不能由可擦鞋来判断不是ROM；；；U盘是EEPROM
+
