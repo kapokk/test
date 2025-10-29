@@ -502,6 +502,9 @@ IO设备
 
 <img width="908" height="256" alt="image" src="https://github.com/user-attachments/assets/323b5975-0104-435a-a3f7-511ed8d3d3d8" />
 
+创建进程是高级调度完成的，进程管理是低级调度完成的
+
+注意区分 前 后这些时间介词易错点
          
 # 计算机网络
 
