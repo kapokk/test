@@ -1223,3 +1223,4 @@ cpu执行数据流程
 
 ROM也有可擦写的，不能由可擦鞋来判断不是ROM；；；U盘是EEPROM
 
+<img width="857" height="323" alt="image" src="https://github.com/user-attachments/assets/8c9f72b2-adcd-43e9-8575-6d5e44b244ce" />
