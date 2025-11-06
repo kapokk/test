@@ -1224,3 +1224,5 @@ cpu执行数据流程
 ROM也有可擦写的，不能由可擦鞋来判断不是ROM；；；U盘是EEPROM
 
 <img width="857" height="323" alt="image" src="https://github.com/user-attachments/assets/8c9f72b2-adcd-43e9-8575-6d5e44b244ce" />
+
+ 即使在虚拟存储系统中，cache存的也是物理地址而不是虚拟地址，所以在访问cache前，要先访问快表获取物理地址，快表没有再访问页表
