@@ -10,6 +10,9 @@ ln用1+x去掉，cos用1-cos等于1/2x²去掉，
 旋转体体积 1.积分pif(x)的平方dx 2.2pi积分xf(x)dx
 旋转体侧面积 2pif(x)根号1+y'的平方 dx
 
+<img width="1304" height="232" alt="image" src="https://github.com/user-attachments/assets/65164267-87f0-4b55-9b02-a11d1970f3fc" />
+
+
 ### 积分和式
   lim(n趋于无限）1/n Σf(i/n) = 积分(0~1)f(x);;;其中i/n就是x，关键是给出的式子可以表达成求和的形式，然后还要提取n分之1
 
