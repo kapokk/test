@@ -5,8 +5,17 @@
 arctan无限是pi/2,不是未定
 ln用1+x去掉，cos用1-cos等于1/2x²去掉，
 超三项多项式用泰勒展开
-次方用ln去掉
+次方用ln去掉，然后考虑1+f(x)-1等价无穷小去掉ln
 多元函数极限用夹逼定理求
+### 和差化积公式
+  帅+帅=帅哥
+  帅-帅=哥帅
+  哥+哥=哥哥
+  哥-哥=两个负嫂嫂
+  <img width="1080" height="492" alt="image" src="https://github.com/user-attachments/assets/23a8094f-1449-44d2-a16b-450643a80b2f" />
+
+
+## 积分
 弧长公式 根号1+y'的平方
 曲率公式 |y''|/1+y'平方的二分之三次方
 旋转体体积 1.积分pif(x)的平方dx 2.2pi积分xf(x)dx
